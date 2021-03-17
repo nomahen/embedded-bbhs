@@ -28,14 +28,12 @@ def init_opacity():
     '''
     This interpolates data from two opacity tables for the sirko-goodman profile. It's initialized at the end of this
     script. 
-    
-    Modify paths for your computer
     '''
     
     ### Low T
 
     ## interpolate from opacity table for sirko goodman profiles
-    path_to_table = '/home/nkaaz/research/data/opacity_tables/f05_caffau/caffau11.7.06.tron'
+    path_to_table = "./opacity_tables/lowT" 
     table = np.genfromtxt(path_to_table,skip_header=4)
     # logR is a top row
     logR  = np.genfromtxt(path_to_table,skip_header=3,skip_footer=85)[2:]
@@ -48,7 +46,7 @@ def init_opacity():
     ### High T
 
     ## interpolate from opacity table for sirko goodman profiles
-    path_to_table = '/home/nkaaz/research/data/opacity_tables/table76'
+    path_to_table = "./opacity_tables/highT" 
     table = np.genfromtxt(path_to_table,skip_header=6,invalid_raise=False, missing_values = "", filling_values=0.0)
     # logR is a top row
     logR  = np.genfromtxt(path_to_table,skip_header=4,skip_footer=70)[1:]
